@@ -1,8 +1,9 @@
 # Fuolah
 Tired of watching annoying ads to download some notes for your favourite subject? No trouble with Fuolah, you can download everything without watching a single ad.
 
-Do not believe me? Right here is a **demo video**:
-https://github.com/Alejandro12120/Fuolah/assets/45500329/5723a63d-6497-4d01-bff4-74ac9db7053c
+Do not believe me?  
+[**Demo video**](https://f.alexrg.com/file/5878d9ad/demo.mp4)
+
 
 ## Requirements
 * Google Chrome or Chromium-based explorer.
