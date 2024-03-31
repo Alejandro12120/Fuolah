@@ -4,6 +4,10 @@ Tired of watching annoying ads to download some notes for your favourite subject
 Do not believe me?  
 [**Demo video**](https://f.alexrg.me/file/5878d9ad/demo.mp4)
 
+## Screenshots
+![image](https://github.com/Alejandro12120/Fuolah/assets/45500329/7699d61b-1034-4973-ae0a-1cf6ef4b3019)
+![image](https://github.com/Alejandro12120/Fuolah/assets/45500329/31dc52a1-abe1-49c9-a111-ddceeffbea75)
+![image](https://github.com/Alejandro12120/Fuolah/assets/45500329/0d3618b2-ac81-4d16-83fa-1e2a8763d686)
 
 ## Requirements
 * Google Chrome or Chromium-based explorer.
@@ -21,3 +25,7 @@ That means that Wuolah rate-limited you, the only way to bypass that is to watch
 
 ## Disclaimer
 I assume no responsibility for any misuse that may occur. Please watch ads to support the creators, thank you.
+
+## Contributors
+* [Taxalo](https://github.com/taxalo)
+* [Alejandro](https://github.com/alejandro12120)
