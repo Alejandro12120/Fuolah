@@ -2,7 +2,7 @@
 Tired of watching annoying ads to download some notes for your favourite subject? No trouble with Fuolah, you can download everything without watching a single ad.
 
 Do not believe me?  
-[**Demo video**](https://f.alexrg.com/file/5878d9ad/demo.mp4)
+[**Demo video**](https://f.alexrg.me/file/5878d9ad/demo.mp4)
 
 
 ## Requirements
