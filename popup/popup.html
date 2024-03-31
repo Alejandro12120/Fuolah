@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fuolah</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Montserrat", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 200;
+            font-style: normal;
+            color: white;
+            min-height: 50vh;
+            overflow: hidden;
+            user-select: none;
+            background: #101720;
+        }
+
+        .hide {
+            /* All this stuff because display: none; doesn't support transitions */
+            visibility: hidden !important;
+            opacity: 0 !important;
+            max-height: 0 !important;
+            padding: 0 !important;
+            margin: 0 !important;
+        }
+    </style>
+
+    <style>
+        main {
+            width: 200px;
+            display: flex;
+        }
+
+        header {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            & h3 {
+                margin-top: 0.5rem;
+                font-weight: 300;
+            }
+        }
+
+        section {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            position: relative;
+            padding: 1rem 0.375rem;
+
+            & img {
+                width: 48px;
+                height: 48px;
+                filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3))
+            }
+
+            & .content {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                margin-top: 0.75rem;
+
+                & .active {
+                    color: #5dfd87;
+                }
+
+                & .disable {
+                    color: #ff5757;
+                }
+
+                & h3 {
+                    position: absolute;
+                    bottom: 0;
+                    margin-bottom: 0.5rem;
+                    font-weight: 300;
+                }
+
+                & button {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: row;
+                    cursor: pointer;
+                    text-decoration: none;
+                    background-color: #101720;
+                    margin-top: 1.75rem;
+                    margin-bottom: 3rem;
+
+                    color: #5dfd87;
+                    border: #5dfd87 0.125em solid;
+                    padding: 0.25em 1em;
+                    border-radius: 0.25em;
+                    font-weight: bold;
+                    filter: drop-shadow(0 0 0.55rem #5dfd87);
+
+                    transition: 0.25s all ease-in-out;
+                }
+
+                & button:hover {
+                    transform: scale(1.10);
+                    color: #3aac58;
+                    border: #3aac58 0.125em solid;
+                    filter: drop-shadow(0 0 0.55rem #3aac58);
+                }
+
+                & .btn-disable {
+                    cursor: not-allowed;
+                    color: #595959;
+                    border: #595959 0.125em solid;
+                    padding: 0.25em 1em;
+                    border-radius: 0.25em;
+                    font-weight: bold;
+                    filter: drop-shadow(0 0 0.35rem #595959);
+                    transition: none !important;
+                }
+
+                & .btn-disable:hover {
+                    transform: none !important;
+                    color: #595959;
+                    border: #595959 0.125em solid;
+                    filter: drop-shadow(0 0 0.35rem #595959);
+                }
+
+                & .btn-error {
+                    cursor: not-allowed;
+                    color: #ff5757;
+                    border: #ff5757 0.125em solid;
+                    padding: 0.25em 1em;
+                    border-radius: 0.25em;
+                    font-weight: bold;
+                    filter: drop-shadow(0 0 0.35rem #ff5757);
+                    transition: none !important;
+                }
+
+                & .btn-error:hover {
+                    transform: none !important;
+                    color: #ff5757;
+                    border: #ff5757 0.125em solid;
+                    filter: drop-shadow(0 0 0.35rem #ff5757);
+                }
+            }
+        }
+    </style>
+
+    <style>
+        .spinner {
+            width: 35px;
+            height: 35px;
+            border: 3px solid #FFF;
+            border-radius: 50%;
+            display: inline-block;
+            position: relative;
+            box-sizing: border-box;
+            animation: rotation 1s linear infinite;
+            filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
+            transition: opacity 0.25s, visibility 0.25s;
+        }
+
+        .spinner::after {
+            content: '';
+            box-sizing: border-box;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 27px;
+            height: 27px;
+            border-radius: 50%;
+            border: 3px solid transparent;
+            border-bottom-color: #5dfd87;
+        }
+
+        @keyframes rotation {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <section>
+            <header>
+                <img src="../images/icon48.png" alt="Fuolah icon">
+                <h3>Wuolah Bypasser</h3>
+            </header>
+
+            <div class="content">
+                <button type="button" id="download" class="btn-disable hide">DOWNLOAD
+                    <span class="material-symbols-outlined">download</span></button>
+
+                <div style="padding: 1rem;" class="hide" id="spinner"><span class="spinner"></span></div>
+
+                <h3 id="active" class="active hide">Wuolah hooked</h3>
+                <h3 id="disable" class="disable hide">Wuolah not hooked</h3>
+            </div>
+
+        </section>
+    </main>
+
+    <script src="popup.js"></script>
+</body>
+
+</html>
