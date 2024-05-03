@@ -16,7 +16,7 @@ Do not believe me?
 1. Download the repository as a zip.
 2. Unzip the repository.
 3. Go to extensions and enable developer mode.
-4. Click `Load unpacked` and select your the repository folder.
+4. Click `Load unpacked` and select the unzipped folder.
 5. Enjoy
 
 ## FAQ
