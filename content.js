@@ -3,10 +3,27 @@ chrome.runtime.onMessage.addListener(message => {
         // TODO: debug
         //console.log("File status requested!");
 
-        const previewButton = document.querySelector("a[data_testid='open-document-preview-button']");
-        if (!previewButton || !previewButton.href) return sendFileStatus(false); // If file not loaded return
+        const parent = document.querySelector("div.css-ftq10c");
 
-        const identificator = previewButton.href.split("-").at(-1);
+        if (!parent) return sendFileStatus(false); // If no parent found return
+
+        let identificator;
+
+        for (let i = 0; i < parent.childNodes.length; i++) {
+            const file = parent.childNodes[i];
+
+            if (!file.href) continue;
+            if (!file.href.match(/(https:\/\/wuolah\.com\/apuntes\/)(?<=\/)(.*?)(?=\/).*/gm)) continue;
+
+            try {
+                identificator = file.href.split("-").at(-1);
+                console.log(identificator)
+
+                if (identificator) break;
+            } catch (error) {
+                continue;
+            }
+        }
 
         if (!identificator) return sendFileStatus(false);
 
@@ -18,12 +35,12 @@ function sendFileStatus(status, identificator = undefined) {
     chrome.runtime.sendMessage({ action: "changeFileStatus", status: status });
 
     if (status) {
-        chrome.runtime.sendMessage({ 
-            action: "downloadInfo", 
-            fileId: identificator, 
-            tokenCookie: Cookies.get("token"), 
-            machineCookie: Cookies.get("segMachineId"), 
-            referralCookie: Cookies.get("invitationCode") 
+        chrome.runtime.sendMessage({
+            action: "downloadInfo",
+            fileId: identificator,
+            tokenCookie: Cookies.get("token"),
+            machineCookie: Cookies.get("segMachineId"),
+            referralCookie: Cookies.get("invitationCode")
         });
     }
     // TODO: debug
