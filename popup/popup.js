@@ -55,7 +55,7 @@ chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
 function download() {
     console.log("clicking");
     console.log(fileId, tokenCookie, machineCookie, referralCookie);
-    if (!fileId || !tokenCookie || !machineCookie || !referralCookie) return;
+    if (!fileId || !tokenCookie || !machineCookie) return;
 
     spinner.classList.remove("hide"); // We show a spinner
     downloadButton.classList.add("hide"); // We hide the button
@@ -71,7 +71,7 @@ function download() {
         "fileId": parseInt(fileId),
         "machineId": machineCookie,
         "noAdsWithCoins": false,
-        "referralCode": referralCookie,
+        "referralCode": (referralCookie ? referralCookie : ""),
         "ubication17ExpectedPubs": 1,
         "ubication17RequestedPubs": 1,
         "ubication1ExpectedPubs": 1,
