@@ -3,7 +3,7 @@ chrome.runtime.onMessage.addListener(message => {
         // TODO: debug
         //console.log("File status requested!");
 
-        const parent = document.querySelector("div.css-ftq10c");
+        const parent = document.querySelector("div.css-tm6h1a");
 
         if (!parent) return sendFileStatus(false); // If no parent found return
 
@@ -45,4 +45,5 @@ function sendFileStatus(status, identificator = undefined) {
     }
     // TODO: debug
     //console.log("Sending file status", status);
+
 }
